@@ -19,7 +19,7 @@ public class LazyModule {
 
     /**
      * 私有成员变量
-     * 被volatile修饰的成员变量可以确保多个线程都能够正确处理
+     * volatile -- 共享成员变量可以确保多个线程都能够正确处理
      */
     private volatile static LazyModule lazyModule = null;
 
