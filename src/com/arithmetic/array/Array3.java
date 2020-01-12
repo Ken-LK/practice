@@ -16,9 +16,9 @@ public class Array3 {
 
     public static void main(String[] args) {
 
-        int[] nums = {2,2,3,4,5};
+        int[] nums = {2, 2, 3, 4, 5};
 
-        System.out.println("==>"+ Arrays.toString(twoSum2(nums,9)));
+        System.out.println("==>" + Arrays.toString(twoSum1(nums, 9)));
 
 
     }
@@ -27,7 +27,7 @@ public class Array3 {
 
         int[] result = new int[2];
 
-        if(nums == null || nums.length < 2){
+        if (nums == null || nums.length < 2) {
             return result;
         }
 
@@ -38,29 +38,26 @@ public class Array3 {
 
         boolean isFind = false;
 
-        while (i < nums.length){
+        while (i < nums.length) {
 
-            if (!isFind)
-            {
-                while (j < nums.length){
-                    if (nums[i] + nums[j] != target){
+            if (!isFind) {
+                while (j < nums.length) {
+                    if (nums[i] + nums[j] != target) {
                         j++;
-                    }
-                    else
-                    {
+                    } else {
                         result[0] = i;
                         result[1] = j;
 
-                        isFind =true;
+                        isFind = true;
 
                         j++;
                     }
                 }
 
                 i++;
-                j=i+1;
+                j = i + 1;
 
-            }else {
+            } else {
                 break;
             }
 
@@ -71,17 +68,17 @@ public class Array3 {
 
     }
 
-    public static int[] twoSum2(int[] nums, int target){
+    public static int[] twoSum2(int[] nums, int target) {
 
-        Map<Integer,Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
 
         int complement;
-        for (int i=0;i<nums.length;i++){
+        for (int i = 0; i < nums.length; i++) {
             complement = target - nums[i];
-            if (map.containsKey(complement)){
-                return new int[]{map.get(complement),i};
+            if (map.containsKey(complement)) {
+                return new int[]{map.get(complement), i};
             }
-            map.put(nums[i],i);
+            map.put(nums[i], i);
         }
 
         throw new IllegalArgumentException("No two sum solution");
